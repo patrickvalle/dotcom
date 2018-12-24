@@ -1,0 +1,27 @@
+{
+  "name": "dotcom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrickvalle/dotcom.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patrickvalle/dotcom/issues"
+  },
+  "homepage": "https://github.com/patrickvalle/dotcom#readme",
+  "devDependencies": {
+    "webpack": "^4.28.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "webfontloader": "^1.6.28"
+  }
+}

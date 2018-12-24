@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="css/app.css" rel="stylesheet"> 
+  </head>
+
+  <body>
+
+    <!-- branding -->
+    <svg id="brand" height="300" width="100%">
+      <defs>
+        <text id="brand-text" x="50%" y="70%" text-anchor="middle" textLength="1200" transform="skewX(20) translate(-60,0)">Patrick Valle</text>
+        <text id="brand-text-shadow" x="50%" y="70%" text-anchor="middle" textLength="1200" transform="skewX(20) translate(-60,0)">Patrick Valle</text>
+      </defs>
+      <g>
+        <use xlink:href="#brand-text-shadow"></use>
+        <use xlink:href="#brand-text"></use>
+      </g>
+    </svg>
+
+    <!-- social icons-->
+    <nav id="social">
+      <div class="left">
+        <object type="image/svg+xml" data="images/pin.svg" class="icon">
+          <img src="images/pin.svg" class="icon">
+        </object>
+        <p class="icon-label">Durham, NC</p>
+      </div>
+      <div class="right">
+        <a href="https://github.com/patrickvalle" target="_blank">
+          <object type="image/svg+xml" data="images/github.svg" class="icon">
+            <img src="images/github.svg" alt="GitHub" class="icon">
+          </object>
+        </a>
+        <a href="https://www.linkedin.com/in/vallepatrick" target="_blank">
+          <object type="image/svg+xml" data="images/linkedin.svg" class="icon">
+            <img src="images/linkedin.svg" alt="LinkedIn" class="icon">
+          </object>
+        </a>
+      </div>
+      <div class="clear"></div>
+    </nav>
+    
+    <script src="dist/main.js"></script>
+
+  </body>
+
+</html>
