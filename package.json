@@ -2,7 +2,6 @@
   "name": "dotcom",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,10 +17,10 @@
   },
   "homepage": "https://github.com/patrickvalle/dotcom#readme",
   "devDependencies": {
-    "webpack": "^4.28.1",
-    "webpack-cli": "^3.1.2"
-  },
-  "dependencies": {
-    "webfontloader": "^1.6.28"
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-fontmin": "^0.7.4",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^5.0.3"
   }
 }
