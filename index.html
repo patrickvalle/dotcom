@@ -12,14 +12,28 @@
   <body>
 
     <!-- branding -->
-    <svg id="brand" height="300" width="100%">
+    <svg class="brand" width="100%">
       <defs>
-        <text id="brand-text" x="50%" y="70%" text-anchor="middle" textLength="1200" transform="skewX(20) translate(-60,0)">Patrick Valle</text>
-        <text id="brand-text-shadow" x="50%" y="70%" text-anchor="middle" textLength="1200" transform="skewX(20) translate(-60,0)">Patrick Valle</text>
+        <text id="brand-text" class="brand-text" x="50%" y="70%" text-anchor="middle" transform="skewX(20) translate(-60,0)">Patrick Valle</text>
+        <text id="brand-text-shadow" class="brand-text-shadow" x="50%" y="70%" text-anchor="middle" transform="skewX(20) translate(-60,0)">Patrick Valle</text>
       </defs>
       <g>
         <use xlink:href="#brand-text-shadow"></use>
         <use xlink:href="#brand-text"></use>
+      </g>
+    </svg>
+    <svg class="brand multiline" width="100%">
+      <defs>
+        <text id="brand-text-multiline" class="brand-text" x="50%" y="45%" text-anchor="middle" transform="skewX(20) translate(-60,0)">
+          <tspan x="53%" dy="0">Patrick</tspan><tspan x="53%" dy="1em">Valle</tspan>
+        </text>
+        <text id="brand-text-multiline-shadow" class="brand-text-shadow" x="50%" y="45%" text-anchor="middle" transform="skewX(20) translate(-60,0)">
+            <tspan x="53%" dy="0">Patrick</tspan><tspan x="53%" dy="1em">Valle</tspan>
+        </text>
+      </defs>
+      <g>
+        <use xlink:href="#brand-text-multiline-shadow"></use>
+        <use xlink:href="#brand-text-multiline"></use>
       </g>
     </svg>
 
