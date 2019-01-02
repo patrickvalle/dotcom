@@ -1,45 +1,68 @@
 const gulp = require('gulp');
-const cleanCSS = require('gulp-clean-css');
 const fontmin = require('gulp-fontmin');
 const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
+const inlineSource = require('gulp-inline-source');
+const cssInlineImages = require('gulp-css-inline-images');
+const cleanCSS = require('gulp-clean-css');
+const del = require('del');
 
-const from = {
-  css: 'css/*',
-  font: 'fonts/*',
-  html: 'index.html',
-  image: 'images/*'
-};
+const src = 'assets';
+const dist = 'dist';
 
-const to = {
-  css: 'dist/css/',
-  font: 'dist/fonts/',
-  html: 'dist/',
-  image: 'dist/images/'
-};
+gulp.task('clean', function () {
+  return del(dist);
+});
+
+gulp.task('copy', () => {
+  return gulp.src([src + '/**/*']).pipe(gulp.dest(dist));
+});
+
+gulp.task('inline-sources', () => {
+  return gulp.src(dist + '/*')
+    .pipe(inlineSource({
+      attribute: false
+    }))
+    .pipe(gulp.dest(dist));
+});
+
+gulp.task('inline-css-images', () => {
+  return gulp.src(dist + '/css/*')
+    .pipe(cssInlineImages({
+      webRoot: src,
+      path: '/images'
+    }))
+    .pipe(gulp.dest(dist + '/css'));
+});
 
 gulp.task('minify-css', () => {
-  return gulp.src(from.css)
+  return gulp.src(dist + '/css/*.css')
     .pipe(cleanCSS())
-    .pipe(gulp.dest(to.css));
+    .pipe(gulp.dest(dist + '/css'));
 });
 
 gulp.task('minify-fonts', () => {
-  return gulp.src(from.font)
+  return gulp.src(dist + '/fonts/*')
     .pipe(fontmin())
-    .pipe(gulp.dest(to.font));
+    .pipe(gulp.dest(dist + '/fonts'));
 });
 
 gulp.task('minify-html', () => {
-  return gulp.src(from.html)
+  return gulp.src(dist + '/*')
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest(to.html));
+    .pipe(gulp.dest(dist));
 });
 
 gulp.task('minify-images', () => {
-  return gulp.src(from.image)
+  return gulp.src(dist + '/images/*')
     .pipe(imagemin())
-    .pipe(gulp.dest(to.image));
+    .pipe(gulp.dest(dist + '/images'));
 });
 
-gulp.task('build', gulp.parallel('minify-css', 'minify-fonts', 'minify-html', 'minify-images'));
+gulp.task('build', gulp.series(
+  'clean', 
+  'copy', 
+  gulp.parallel('minify-css', 'minify-fonts', 'minify-html', 'minify-images'),
+  'inline-css-images',
+  'inline-sources'
+));

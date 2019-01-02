@@ -5,7 +5,8 @@ clean:
 	rm -r dist
 
 env:
-	npm install --save-dev gulp
+	npm install
 
 build:
-	./node_modules/gulp/bin/gulp.js build
+	npx webpack
+	# ./node_modules/gulp/bin/gulp.js build
