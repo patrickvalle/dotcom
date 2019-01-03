@@ -1,5 +1,4 @@
 const gulp = require('gulp');
-const fontmin = require('gulp-fontmin');
 const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
 const inlineSource = require('gulp-inline-source');
@@ -41,12 +40,6 @@ gulp.task('minify-css', () => {
     .pipe(gulp.dest(dist + '/css'));
 });
 
-gulp.task('minify-fonts', () => {
-  return gulp.src(dist + '/fonts/*')
-    .pipe(fontmin())
-    .pipe(gulp.dest(dist + '/fonts'));
-});
-
 gulp.task('minify-html', () => {
   return gulp.src(dist + '/*')
     .pipe(htmlmin({ collapseWhitespace: true }))
@@ -60,9 +53,8 @@ gulp.task('minify-images', () => {
 });
 
 gulp.task('build', gulp.series(
-  'clean', 
   'copy', 
-  gulp.parallel('minify-css', 'minify-fonts', 'minify-html', 'minify-images'),
+  gulp.parallel('minify-css', 'minify-html', 'minify-images'),
   'inline-css-images',
   'inline-sources'
 ));

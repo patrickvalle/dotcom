@@ -1,12 +1,11 @@
 
 default: env
 
+build:
+	./node_modules/gulp/bin/gulp.js build
+
 clean:
-	rm -r dist
+	./node_modules/gulp/bin/gulp.js clean
 
 env:
 	npm install
-
-build:
-	npx webpack
-	# ./node_modules/gulp/bin/gulp.js build

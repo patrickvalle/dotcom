@@ -17,13 +17,6 @@ html, body { background: #eee url(../images/background.png?embed); color: #333; 
 #social .icon:hover { fill: #444; }
 #social .icon-label { display: inline; margin: 0; padding: 0; position: relative; top: -15px; }
 
-@font-face {
-  font-family: 'Roboto Condensed';
-  font-style: normal;
-  font-weight: normal;
-  src: url(../fonts/RobotoCondensed-Regular.ttf) format('truetype');
-}
-
 @keyframes cast-shadows {
   0% { text-shadow: none; }
   10% { text-shadow: -1px 1px 0 rgba(0, 220, 220, 0.3), 1px 1px 0 rgba(255, 50, 50, 0.3); }
