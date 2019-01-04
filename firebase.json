@@ -1,0 +1,15 @@
+{
+  "functions": {
+    "source": "dist"
+  },
+  "hosting": {
+    "ignore": "**/*",
+    "public": "dist",
+    "rewrites": [
+      {
+        "source": "/",
+        "function": "handler"
+      }
+    ]
+  }
+}

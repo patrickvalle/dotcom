@@ -1,0 +1,22 @@
+{
+    "name": "dotcom-handler",
+    "version": "1.0.0",
+    "description": "",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/patrickvalle/dotcom.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/patrickvalle/dotcom/issues"
+    },
+    "homepage": "https://github.com/patrickvalle/dotcom#readme",
+    "dependencies": {
+      "firebase-admin": "~6.0.0",
+      "firebase-functions": "^2.1.0"
+    },
+    "private": true
+  }
+  

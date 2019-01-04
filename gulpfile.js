@@ -5,6 +5,8 @@ const inlineSource = require('gulp-inline-source');
 const cssInlineImages = require('gulp-css-inline-images');
 const cleanCSS = require('gulp-clean-css');
 const del = require('del');
+const fs = require('fs');
+const replace = require('gulp-replace');
 
 const src = 'assets';
 const dist = 'dist';
@@ -50,6 +52,15 @@ gulp.task('minify-images', () => {
   return gulp.src(dist + '/images/*')
     .pipe(imagemin())
     .pipe(gulp.dest(dist + '/images'));
+});
+
+gulp.task('pre-deploy', () => {
+  let body = fs.readFileSync(dist + '/index.html', "utf8").replace(/'/g, '\\\'');
+  gulp.src(['node_modules/**']).pipe(gulp.dest(dist + '/node_modules'));
+  gulp.src(['package.json']).pipe(gulp.dest(dist));
+  return gulp.src('src/index.js')
+    .pipe(replace(/{body}/, body))
+    .pipe(gulp.dest(dist));
 });
 
 gulp.task('build', gulp.series(
