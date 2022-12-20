@@ -17,7 +17,7 @@ html, body { background: #eee url(../images/background.png); color: #333; cursor
 #social .icon-label { display: inline; margin: 0; padding: 0; position: relative; top: -15px; }
 
 #links { background: rgba(255, 255, 255, 0.5); padding: 10px 20px 6px 20px; }
-#social .link-text { display: inline; margin: 0; padding: 0; position: relative; top: -15px; }
+#links .link-text { display: inline; margin: 0; padding: 0; position: relative; top: -15px; }
 
 @font-face {
   font-family: 'Roboto Condensed';
