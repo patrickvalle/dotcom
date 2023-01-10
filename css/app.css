@@ -10,8 +10,8 @@ html, body { background: #eee url(../images/background.png); color: #333; cursor
 .brand-text-shadow { animation: cast-shadows 0.5s ease-out forwards; fill: #fff; font-weight: 900; }
 
 #social { background: rgba(255, 255, 255, 0.5); padding: 10px 20px 6px 20px; text-align: right; }
-#social .left { float: left; }
-#social .right { float: right; }
+.left { float: left; }
+.right { float: right; }
 #social a { display: inline-block; margin: 0 0 0 10px; }
 #social .icon { cursor: pointer; height: 40px; pointer-events: none; width: 40px; }
 #social .icon-label { display: inline; margin: 0; padding: 0; position: relative; top: -15px; }
@@ -19,6 +19,13 @@ html, body { background: #eee url(../images/background.png); color: #333; cursor
 #links { background: rgba(255, 255, 255, 0.5); padding: 10px 20px 6px 20px; }
 #links .link-text { display: inline; margin: 0; padding: 0; position: relative; }
 
+#reviews { background: rgba(255, 255, 255, 0.5); padding: 10px 20px 6px 20px; }
+#social h1 { display: inline; margin: 0; padding: 0; position: relative; }
+#reviews-container { display: flex; flex-direction: row; }
+#reviews-container .review { flex-grow: 1; background: rgba(255, 255, 255); border-radius: 15px; margin: 10px; }
+#reviews-container .review .title-container { display: flex; flex-direction: row; justify-content: space-between; padding: 5px; }
+#reviews-container .review .title-container .title, #reviews-container .review .title-container .stars { padding: 5px; }
+#reviews-container .review p {padding: 5px; margin: 0px; }
 @font-face {
   font-family: 'Roboto Condensed';
   font-style: normal;
