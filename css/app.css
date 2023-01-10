@@ -21,7 +21,7 @@ html, body { background: #eee url(../images/background.png); color: #333; cursor
 
 #reviews { background: rgba(255, 255, 255, 0.5); padding: 10px 20px 6px 20px; }
 #social h1 { display: inline; margin: 0; padding: 0; position: relative; }
-#reviews-container { display: flex; flex-direction: row; }
+#reviews-container { display: flex; flex-direction: row; flex-wrap: wrap; }
 #reviews-container .review { flex-grow: 1; background: rgba(255, 255, 255); border-radius: 15px; margin: 10px; }
 #reviews-container .review .title-container { display: flex; flex-direction: row; justify-content: space-between; padding: 5px; }
 #reviews-container .review .title-container .title, #reviews-container .review .title-container .stars { padding: 5px; }
